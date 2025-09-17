@@ -46,10 +46,11 @@
             <i class="bi bi-stars"></i>
             Ask Your AI SearchBox Anything
           </h1>
-          <form>
-            <input type="text" placeholder="Type your question..." />
+          <form id="search-form">
+            <input id="search-input" type="text" placeholder="Type your question..." />
             <button type="submit"><i class="bi bi-search"></i></button>
           </form>
+          <div id="ai-response" style="margin-top: 1rem;"></div>
         </li>
       </div>
       <div class="user-notifications">
@@ -125,7 +126,7 @@
             </div>
             <div class="course-card suggested">
               <div class="course-image">
-                <img src="../dependencies2/course_images/1235124_7c5f_6.webp" alt="" />
+                <img src="../dependencies2/course_images/a.png" alt="" />
               </div>
               <div class="course-title">Data Scientist</div>
               <div class="course-category">Technology</div>
@@ -133,9 +134,9 @@
             </div>
             <div class="course-card suggested">
               <div class="course-image">
-                <img src="../dependencies2/course_images/1235124_7c5f_6.webp" alt="" />
+                <img src="../dependencies2/course_images/b.png" alt="" />
               </div>
-              <div class="course-title">Introduction to AI</div>
+              <div class="course-title">Introduction to Python</div>
               <div class="course-category">Technology</div>
               <div class="course-content-creator">By John Doe</div>
             </div>
@@ -227,6 +228,31 @@
           addMessage("Sorry, something went wrong.", "bot");
           console.error(err);
         });
+    });
+
+    document.getElementById("search-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const query = document.getElementById("search-input").value.trim();
+      if (!query) return;
+
+      const responseDiv = document.getElementById("ai-response");
+      responseDiv.textContent = "Thinking...";
+
+      try {
+        const res = await fetch("/api/route", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: query })
+        });
+
+        const data = await res.json();
+
+        console.log(data);  
+        responseDiv.textContent = data.answer || "No response received.";
+      } catch (err) {
+        responseDiv.textContent = "Error: " + err.message;
+      }
     });
   </script>
 </body>
