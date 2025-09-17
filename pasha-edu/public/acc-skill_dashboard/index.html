@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Your Future With Courage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <nav>
+        <div class="company_logo">
+          <img src="../dependencies2/logo_white.png" alt="pashaEdu Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="/main_dashboard/index.html">Dashboard</a></li>
+          <li><a href="/learningpath_dashboard/index.html">Learning Path</a></li>
+          <li><a href="/courses_dashboard/index.html">My Courses</a></li>
+          <li><a href="/acc-skill_dashboard/index.html">Certificates</a></li>
+          <li><a href="#exams">Quizzes & Exams</a></li>
+          <li><a href="#career-guidance">Career Guidance</a></li>
+          <li><a href="#opportunities">Opportunities</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header -->
+      <header>
+        <ul>
+          <li class="user-profile">
+            <div class="user-account"><i class="bi bi-person"></i></div>
+            <p class="user-greeting">Hello, Ahmet</p>
+          </li>
+        </ul>
+      </header>
+
+      <!-- Main -->
+      <main>
+        <!-- Export & LinkedIn -->
+        <div class="export-share">
+          <button id="exportPDF">
+            <i class="bi bi-file-earmark-pdf"></i> Export Profile
+          </button>
+          <button id="shareLinkedIn">
+            <i class="bi bi-linkedin"></i> Share on LinkedIn
+          </button>
+        </div>
+        <div class="dashboard-accomplishments">
+          <!-- Skills Dashboard -->
+          <div class="user-capabilites">
+            <div class="skills">
+              <h2>Skills Dashboard</h2>
+              <div class="skills-dashboard skill-card">
+                <div class="some-conatiner">
+                  <div class="skill-header">
+                    <h4>Communication</h4>
+                    <span>85%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="some-conatiner">
+                  <div class="skill-header">
+                    <h4>Teamwork</h4>
+                    <span>70%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="some-conatiner">
+                  <div class="skill-header">
+                    <h4>Problem Solving</h4>
+                    <span>60%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Achievements & Badges -->
+            <div class="achievements">
+              <h2>Achievements & Badges</h2>
+              <div class="achievements-badges badge-card">
+                <div class="">
+                  <i class="bi bi-trophy"></i>
+                  <p>Top Performer</p>
+                </div>
+                <div class="">
+                  <i class="bi bi-award"></i>
+                  <p>Completion Master</p>
+                </div>
+                <div class="">
+                  <i class="bi bi-star"></i>
+                  <p>Skill Expert</p>
+                </div>
+                <div class="">
+                  <i class="bi bi-lightning"></i>
+                  <p>Fast Learner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Skill Radar Chart -->
+          <div class="user-capabilites">
+            <div class="chart">
+              <h2>Skill Radar Chart</h2>
+              <div class="radar-chart-container">
+                <canvas id="skillsRadarChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Certificates Gallery -->
+            <div class="certificates">
+              <h2>Certificates</h2>
+              <div class="certificates-carousel">
+                <div class="certificate-card">
+                  <img
+                    src="../dependencies2/course_images/1235124_7c5f_6.webp"
+                    alt="Certificate 1"
+                  />
+                  <p>Web Development</p>
+                </div>
+                <div class="certificate-card">
+                  <img
+                    src="../dependencies2/course_images/1235124_7c5f_6.webp"
+                    alt="Certificate 2"
+                  />
+                  <p>Data Science Basics</p>
+                </div>
+                <div class="certificate-card">
+                  <img
+                    src="../dependencies2/course_images/1235124_7c5f_6.webp"
+                    alt="Certificate 3"
+                  />
+                  <p>Project Management</p>
+                </div>
+                <div class="certificate-card">
+                  <img
+                    src="../dependencies2/course_images/1235124_7c5f_6.webp"
+                    alt="Certificate 4"
+                  />
+                  <p>AI Fundamentals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

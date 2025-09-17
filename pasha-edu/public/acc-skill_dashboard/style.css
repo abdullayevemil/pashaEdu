@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fa;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style-type: none;
+}
+
+/* ===========================
+   Layout
+=========================== */
+.container {
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+nav {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #e5e5e5;
+}
+
+nav img {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.nav-links li {
+  margin: 12px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-links li:last-child {
+  border-bottom: none;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #1483f7;
+}
+
+/* Header (top bar) */
+header {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f7fa;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.user-account i {
+  font-size: 18px;
+  color: #333;
+}
+.user-greeting {
+  font-weight: 500;
+  color: #444;
+}
+
+/* Main Content */
+main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 0px 30px;
+  text-align: center;
+}
+
+/* Content */
+
+.dashboard-accomplishments {
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Titles */
+.dashboard-accomplishments h2 {
+  font-size: 26px;
+  margin: 30px 0 15px;
+  color: #333;
+  border-left: 5px solid #1483f7;
+  padding-left: 10px;
+}
+
+.user-capabilites {
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+/* Skill Cards */
+
+.skills-dashboard {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  border-radius: 16px;
+  padding: 20px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(20, 131, 247, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(20, 131, 247, 0.2);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  background: linear-gradient(90deg, #1483f7, #44a1ff);
+  border-radius: 12px;
+  transition: width 0.5s ease;
+}
+
+/* Radar Chart */
+.radar-chart-container {
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(20, 131, 247, 0.1);
+}
+
+/* Certificates Carousel */
+.certificates-carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.certificate-card {
+  flex: 0 0 200px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 15px rgba(20, 131, 247, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(20, 131, 247, 0.2);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.certificate-card p {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
+
+/* Achievements & Badges */
+.achievements-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.badge-card {
+  background: linear-gradient(145deg, rgb(255, 255, 255), #ffe8a2);
+  border-radius: 16px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(247, 175, 20, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.badge-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 203, 100, 0.25);
+}
+
+.badge-card i {
+  font-size: 36px;
+  color: #1483f7;
+  margin-bottom: 10px;
+}
+
+.certificates {
+  text-align: left;
+}
+/* Export & LinkedIn Buttons */
+.export-share {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.export-share button {
+  background: linear-gradient(90deg, #1483f7, #44a1ff);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.export-share button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(20, 131, 247, 0.4);
+}
