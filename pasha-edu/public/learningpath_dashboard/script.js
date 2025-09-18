@@ -49,28 +49,27 @@ nextBtn.addEventListener("click", async () => {
     currentStage++;
     updateStages();
   } else {
-    // Final stage clicked
     try {
-      // Disable button immediately
+      // Freeze UI
       nextBtn.disabled = true;
-      nextBtn.classList.add("opacity-50", "cursor-not-allowed"); // optional styling
+      nextBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+      // Show loader overlay
+      document.getElementById("loadingOverlay").style.display = "flex";
 
       const res = await fetch("/api/career-plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userSelections)
+        body: JSON.stringify(userSelections),
       });
 
       const data = await res.json();
       if (res.ok) {
         console.log("Career Plan:", data.plan);
-
-        // Save career plan
         localStorage.setItem("careerPlan", data.plan);
 
-        // Redirect to roadmap
+        // Redirect
         window.location.href = "/career-roadmap";
-
       } else {
         throw new Error(data.error || "Unknown error");
       }
@@ -78,9 +77,12 @@ nextBtn.addEventListener("click", async () => {
       console.error(err);
       alert("Error generating career plan. Please try again.");
 
-      // Re-enable button if error occurs
+      // Re-enable UI
       nextBtn.disabled = false;
       nextBtn.classList.remove("opacity-50", "cursor-not-allowed");
+
+      // Hide overlay if error occurs
+      document.getElementById("loadingOverlay").style.display = "none";
     }
   }
 });
